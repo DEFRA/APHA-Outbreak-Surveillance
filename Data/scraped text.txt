@@ -1,0 +1,194 @@
+@"Surveillance (SSC)
+JOB REQUEST FORM
+
+Date Raised:
+09/07/2023
+Date Visit Due:
+12/07/2023
+Job Number:
+AIV67221
+
+
+Visit Type(s):
+
+Clinical Inspection / Examination
+Visit Surveillance
+
+
+Disease:
+Avian Influenza
+
+
+
+
+
+Allocated to:
+
+
+Customer/Premises Detail
+CPH:
+42/018/9001
+Main Address: 
+
+Manor Road 6
+ East Preston
+ LITTLEHAMPTON
+ West Sussex
+ England
+ BN16 1QA
+Location:
+
+6 Manor Road
+Manor Road 6, East Preston, LITTLEHAMPTON, West Sussex, England, BN16 1QA
+
+
+
+
+Contact Name:
+Emma-Louise Reeves-Luker
+
+
+Contact Tel:
+
+Map Reference:
+TQ0728801877
+Mobile Tel:
+07795175147
+
+Additional Map References:
+Reference
+Description
+
+Infected Areas:
+Reference
+Infected Premises
+Zone Name
+AIV/2023/33
+Wadars Hangleton Lane, Ferring, WORTHING, West Sussex, England, BN12 6PP 
+CBMCZ_3K_DPR2023_87_Angmering
+""AIV 2023/33 CBMCZ (NP): Surveillance requirements for Commercial premises identified within the special category IP. Please carry out a surveillance visit by a Veterinary Inspector not earlier than 7 days post effective C&D (visit can start from 09/07/2023 13:21). Include clinical inspection of all susceptible stock, available records checks and any further actions including sampling, if necessary, as per latest Emergency Action (EA2022/59/VTOT). Please note, pigs do not require inspection, unless clinical signs of disease have been found in the poultry on site. Please include a welfare check of birds. If it becomes evident when arranging the visit, that this will in fact classify as non-commercial or no stock premises, please carry out a Telephone Veterinary Inquiry by a VI (if non-commercial) or complete an EXD197 for no stock return (if no stock), as per latest EA. "" Last Visit details for Premises/Disease
+Visit Date:
+01/07/2023
+
+Job Number:
+AIV67151
+Allocated to:
+Manuel Aller
+
+
+
+
+
+Visit Type(s):
+Telephone Enquiry, Visit Stock Enquiry, Visit Surveillance
+
+
+
+
+
+Visit Status:
+Completed
+
+
+
+
+
+Comments:
+ Commercial premises within the CBMCZ. Must be subject to an inspection by a Veterinary Inspector (VI) no earlier than seven days after the date of confirmation of disease in the IP as per latest EA2023/10/VTOT. Reviewed by OSV Sorin Pescariu on 03/06/2023.
+
+ Stock Counts at Last Visit
+Stock Description
+Category
+Count
+Chicken
+Backyard Flock
+1
+
+
+ Restrictions/Notices/Licences
+Issue Date
+Disease
+Form
+Issue Reason
+Date Lifted
+ 
+Debrief
+
+ 1.    Forms completed 
+Form
+Comment
+
+
+
+
+
+
+
+
+
+
+
+2.    Facilities
+N 
+Y 
+
+Are the animal handling facilities adequate for stock examination / sampling?
+
+Additional Information:
+
+
+
+
+
+3.    Record Detail Amendments
+eg Contact, location, unit detail changes
+
+
+
+
+
+
+
+4.    Additional Action [Post Debrief Instructions]
+
+
+
+
+
+
+
+
+
+
+
+5.    Audit Actions 
+
+
+Field Visit Quality Assurance Audit
+Field Visit H&S Audit
+Electronic Record Audit
+Date
+
+
+
+Name 
+
+
+
+
+6.    Data Entry/Records Management 
+
+
+Entered on NDOMS
+Sam Amendments Actioned
+Docs Scanned & Distributed
+Date
+
+
+
+Name 
+
+
+
+
+"
