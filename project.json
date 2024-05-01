@@ -3,6 +3,7 @@
   "description": "WP119",
   "main": "Main.xaml",
   "dependencies": {
+    "IDP": "[1.0.17]",
     "Logging": "[1.0.10]",
     "Pop.Ups": "[1.0.3]",
     "UiPath.Excel.Activities": "[2.22.3]",
