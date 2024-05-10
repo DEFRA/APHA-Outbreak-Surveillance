@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1410,706</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410,1766</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Tracker_List_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -94,25 +94,21 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Tracker_List" sap:VirtualizedContainerService.HintSize="553.6,1870" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update_Tracker_List" sap:VirtualizedContainerService.HintSize="476,1700.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="dictProperties">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="new Dictionary(of String, Object)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[new Dictionary(of String, Object)]" Name="dictProperties" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Unfortunately have to hardcode these.&#xD;&#xA;&#xD;&#xA;field_1 = Date Added to Tracker&#xD;&#xA;field_2 = JRF Due Date&#xD;&#xA;field_4 = Disease Reference Number&#xD;&#xA;field_5 = FOB Number&#xD;&#xA;field_6 = JRF Number&#xD;&#xA;field_7 = CPH Number&#xD;&#xA;field_8 = JRF Type&#xD;&#xA;field_9 = Commercial/Non-Commercial&#xD;&#xA;field_10 = Keeper Surname&#xD;&#xA;field_11 = Address&#xD;&#xA;field_12 = Postcode&#xD;&#xA;field_13 = Phone Number&#xD;&#xA;field_14 = Mobile Number&#xD;&#xA;field_16 = Stock Numbers" DisplayName="Create upload dictionary" sap:VirtualizedContainerService.HintSize="511.6,780.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Unfortunately have to hardcode these.&#xA;&#xA;field_0 = Date Added to Tracker&#xA;field_1 = JRF Due Date&#xA;field_3 = Disease Reference Number&#xA;field_4 = FOB Number&#xA;field_5 = JRF Number&#xA;field_6 = CPH Number&#xA;field_7 = JRF Type&#xA;field_8 = Commercial/Non-Commercial&#xA;field_9 = Keeper Surname&#xA;field_10 = Address&#xA;field_11 = Postcode&#xA;field_12 = Phone Number&#xA;field_13 = Mobile Number&#xA;field_14 = Stock Numbers" DisplayName="Create upload dictionary" sap:VirtualizedContainerService.HintSize="434,780.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_1")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_0")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[Today.ToString("dd/MM/yyyy")]</InArgument>
@@ -120,7 +116,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_2")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_1")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("DateVisitDue")]</InArgument>
@@ -128,7 +124,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_4")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_3")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("InfectedAreasReference")]</InArgument>
@@ -136,7 +132,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_5")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_4")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("FOB")]</InArgument>
@@ -144,7 +140,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_6")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_5")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("JobNumber")]</InArgument>
@@ -152,7 +148,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_7")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_6")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("CPH")]</InArgument>
@@ -160,7 +156,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_8")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_7")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("JRFType")]</InArgument>
@@ -168,7 +164,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_9")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_8")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("CommercialNonCommercial")]</InArgument>
@@ -176,7 +172,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_10")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_9")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("ContactName")]</InArgument>
@@ -184,7 +180,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_11")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_10")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("Location")]</InArgument>
@@ -192,7 +188,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_12")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_11")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("Postcode")]</InArgument>
@@ -200,7 +196,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_13")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_12")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("ContactTel")]</InArgument>
@@ -208,7 +204,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_14")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_13")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[IN_dictJRF("MobileTel")]</InArgument>
@@ -216,7 +212,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_16")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_14")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[""]</InArgument>
@@ -230,7 +226,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[IN_dtStockNumbers]" DisplayName="For Each Stock" sap:VirtualizedContainerService.HintSize="511.6,175.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[IN_dtStockNumbers]" DisplayName="For Each Stock" sap:VirtualizedContainerService.HintSize="434,175.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -238,30 +234,30 @@
           </ActivityAction.Argument>
           <Assign DisplayName="Construct string for SPOL list" sap:VirtualizedContainerService.HintSize="262.4,59.6" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_16")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_14")]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:Object">[dictProperties("field_16").ToString+stockRow("Count").ToString+" "+stockRow("Stock Description").ToString+", "]</InArgument>
+              <InArgument x:TypeArguments="x:Object">[dictProperties("field_14").ToString+stockRow("Count").ToString+" "+stockRow("Stock Description").ToString+", "]</InArgument>
             </Assign.Value>
           </Assign>
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <Assign DisplayName="Remove trailing comma from stock numbers" sap:VirtualizedContainerService.HintSize="511.6,59.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Remove trailing comma from stock numbers" sap:VirtualizedContainerService.HintSize="434,59.6" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:Object">[dictProperties("field_16")]</OutArgument>
+        <OutArgument x:TypeArguments="x:Object">[dictProperties("field_14")]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:Object">[Regex.Replace(dictProperties("field_16").ToString,"\, $","")]</InArgument>
+        <InArgument x:TypeArguments="x:Object">[Regex.Replace(dictProperties("field_14").ToString,"\, $","")]</InArgument>
       </Assign.Value>
     </Assign>
-    <usa:SharepointApplicationScope AzureApplicationID="{x:Null}" ClientContext="{x:Null}" ClientId="{x:Null}" ClientSecret="{x:Null}" LoginTimeout="{x:Null}" Password="{x:Null}" SecurePassword="{x:Null}" UserName="{x:Null}" AzureAppPermissions="None" DisplayName="Sharepoint application scope - tracker list" sap:VirtualizedContainerService.HintSize="511.6,642.4" sap2010:WorkflowViewState.IdRef="SharepointApplicationScope_1" PlatformType="Online" QueryGrouping="False" ResetCredentials="False" SharePointInstanceType="WebLogin" URL="[IN_strSharepointURL]">
+    <usa:SharepointApplicationScope AzureApplicationID="{x:Null}" ClientContext="{x:Null}" ClientId="{x:Null}" ClientSecret="{x:Null}" LoginTimeout="{x:Null}" Password="{x:Null}" SecurePassword="{x:Null}" UserName="{x:Null}" AzureAppPermissions="None" DisplayName="Sharepoint application scope - tracker list" sap:VirtualizedContainerService.HintSize="434,473.2" sap2010:WorkflowViewState.IdRef="SharepointApplicationScope_1" PlatformType="Online" QueryGrouping="False" ResetCredentials="False" SharePointInstanceType="WebLogin" URL="[IN_strSharepointURL]">
       <usa:SharepointApplicationScope.Body>
         <ActivityAction x:TypeArguments="us:SharePointContextInfo">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="us:SharePointContextInfo" Name="SharePointContextInfoTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="477.6,500.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Update tracker and add attachments" sap:VirtualizedContainerService.HintSize="360.8,331.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="intItemID" />
             </Sequence.Variables>
@@ -270,25 +266,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <usal:AddListItem AttachmentsAction="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" AddedItemID="[intItemID]" ChooseFile="False" DisplayName="Add list item - JRF info" sap:VirtualizedContainerService.HintSize="435.6,103.2" sap2010:WorkflowViewState.IdRef="AddListItem_1" ListName="[IN_strSharepointList]" PropertiesToAdd="[dictProperties]" ShowAttachFiles="False" ShowCAMLQuery="False" ShowCAMLWarning="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="True" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="True" ShowRelativeUrl="False" ShowRename="False" ShowUserName="False" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.6,265.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="360.8,187.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <usal:AddListItemAttachments AttachmentsCollection="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" AttachmentsAction="AttachFiles" ChooseFile="False" DisplayName="Attach JRF to list item" sap:VirtualizedContainerService.HintSize="318.8,95.6" sap2010:WorkflowViewState.IdRef="AddListItemAttachments_1" ListItemID="[intItemID]" ListName="[IN_strSharepointList]" ShowAttachFiles="True" ShowCAMLQuery="False" ShowCAMLWarning="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="True" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="False" ShowRelativeUrl="False" ShowRename="False" ShowUserName="False">
-                    <usal:AddListItemAttachments.Attachments>
-                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                        <InArgument x:TypeArguments="x:String">[IN_strJRFPath]</InArgument>
-                      </scg:List>
-                    </usal:AddListItemAttachments.Attachments>
-                  </usal:AddListItemAttachments>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
+            <usal:AddListItem AttachmentsAction="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" AddedItemID="[intItemID]" ChooseFile="False" DisplayName="Add list item - JRF info" sap:VirtualizedContainerService.HintSize="318.8,103.2" sap2010:WorkflowViewState.IdRef="AddListItem_1" ListName="[IN_strSharepointList]" PropertiesToAdd="[dictProperties]" ShowAttachFiles="False" ShowCAMLQuery="False" ShowCAMLWarning="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="True" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="True" ShowRelativeUrl="False" ShowRename="False" ShowUserName="False" />
+            <usal:AddListItemAttachments AttachmentsCollection="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" AttachmentsAction="AttachFiles" ChooseFile="False" DisplayName="Attach JRF to list item" sap:VirtualizedContainerService.HintSize="318.8,96" sap2010:WorkflowViewState.IdRef="AddListItemAttachments_1" ListItemID="[intItemID]" ListName="[IN_strSharepointList]" ShowAttachFiles="True" ShowCAMLQuery="False" ShowCAMLWarning="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="True" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="False" ShowRelativeUrl="False" ShowRename="False" ShowUserName="False">
+              <usal:AddListItemAttachments.Attachments>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                  <InArgument x:TypeArguments="x:String">[IN_strJRFPath]</InArgument>
+                </scg:List>
+              </usal:AddListItemAttachments.Attachments>
+            </usal:AddListItemAttachments>
           </Sequence>
         </ActivityAction>
       </usa:SharepointApplicationScope.Body>

@@ -6,6 +6,7 @@
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="io_arrCaseID" Type="InOutArgument(s:String[])" />
     <x:Property Name="IN_dtDiseaseReference" Type="InArgument(sd1:DataTable)" />
+    <x:Property Name="IN_dtFOB" Type="InArgument(sd1:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -47,7 +48,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -79,11 +80,10 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>Pop Ups</AssemblyReference>
       <AssemblyReference>System.Configuration.Install</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " sap:VirtualizedContainerService.HintSize="645.6,1270" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " sap:VirtualizedContainerService.HintSize="645.6,1287.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dictJRF" />
       <Variable x:TypeArguments="sd1:DataTable" Name="dtStockTable" />
@@ -97,7 +97,7 @@
         <av:Size x:Key="ShapeSize">60,75.2</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,97.7</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        <x:Double x:Key="Height">1156.4</x:Double>
+        <x:Double x:Key="Height">1175.6</x:Double>
         <x:Double x:Key="Width">611.6</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -108,11 +108,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,97.7</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.4</av:Size>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,150.1 300,170.1</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Scrape JRF workflow" sap:VirtualizedContainerService.HintSize="200,52.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\Scrape JRF.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Scrape JRF workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\Scrape JRF.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="IN_strJRFPath">[in_TransactionItem]</InArgument>
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="OUT_dictJRF">[dictJRF]</OutArgument>
@@ -132,7 +132,7 @@
               <av:Point x:Key="ShapeLocation">259,170.1</av:Point>
               <av:Size x:Key="ShapeSize">82,87.2</av:Size>
               <av:PointCollection x:Key="TrueConnector">259,213.7 180,213.7 180,266.04</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">341,213.7 430,213.7 430,445.64 400,445.64</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">341,213.7 430,213.7 430,465.84 400,465.84</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -140,11 +140,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">80,266.04</av:Point>
-                  <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">180,334.84 180,445.64 200,445.64</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">200,68</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">180,334.04 180,465.84 200,465.84</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Pause Point 1" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <Sequence DisplayName="Pause Point 1" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_1">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strJRFHTML" />
                   <Variable x:TypeArguments="x:String" Name="strStockHTML" />
@@ -198,12 +198,15 @@
                 <FlowStep x:Name="__ReferenceID1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,356.04</av:Point>
-                      <av:Size x:Key="ShapeSize">200,179.2</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,535.24 300,554.84</av:PointCollection>
+                      <av:Point x:Key="ShapeLocation">200,346.04</av:Point>
+                      <av:Size x:Key="ShapeSize">200,239.6</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,585.64 300,604.84</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap2010:Annotation.AnnotationText="Filter the disease reference table on the disease scraped from the JRF. If anything other than a length-1 array of datarows is returned, a business exception is thrown." DisplayName="Get Disease Row" sap:VirtualizedContainerService.HintSize="200,179.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence sap2010:Annotation.AnnotationText="Filter the disease reference table on the disease scraped from the JRF. &#xD;&#xA;Also filter the FOB table on the first two digits of the CPH scraped from the JRF.&#xD;&#xA;If anything other than a length-1 array of datarows is returned from either table, a business exception is thrown." DisplayName="Get Disease Row and FOB" sap:VirtualizedContainerService.HintSize="200,239.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd1:DataRow[]" Name="rowsFOB" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -218,7 +221,7 @@
                         <InArgument x:TypeArguments="sd1:DataRow[]">[IN_dtDiseaseReference.Select("Disease = '"+dictJRF("Disease")+"'")]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[rowsDisease.Count&lt;&gt;1]" DisplayName="If single row not returned" sap:VirtualizedContainerService.HintSize="484,250.4" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[rowsDisease.Count&lt;&gt;1]" DisplayName="If single disease row not returned" sap:VirtualizedContainerService.HintSize="484,250.4" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
                         <Throw DisplayName="Throw - could not isolate disease" Exception="[new BusinessRuleException(&quot;Could not isolate disease row in reference table. &quot;+Environment.NewLine+rowsDisease.Count.ToString+&quot; rows returned.&quot;+Environment.NewLine+&quot;Disease name: &quot;+dictJRF(&quot;Disease&quot;))]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                       </If.Then>
@@ -232,17 +235,47 @@
                         </Sequence>
                       </If.Else>
                     </If>
+                    <Assign DisplayName="Filter FOB table on CPH leading 2 digits" sap:VirtualizedContainerService.HintSize="484,59.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd1:DataRow[]">[rowsFOB]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd1:DataRow[]">[IN_dtFOB.Select("CPH = '"+dictJRF("CPH").Substring(0,2)+"'")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[rowsFOB.Count&lt;&gt;1]" DisplayName="If single FOB row not returned" sap:VirtualizedContainerService.HintSize="484,250.4" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Throw DisplayName="Throw - could not isolate FOB" Exception="[new BusinessRuleException(&quot;Could not isolate FOB row in reference table. &quot;+Environment.NewLine+rowsFOB.Count.ToString+&quot; rows returned.&quot;+Environment.NewLine+&quot;CPH: &quot;+dictJRF(&quot;CPH&quot;).Substring(0,2))]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <Assign DisplayName="Get FOB from row" sap:VirtualizedContainerService.HintSize="484,59.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[dictJRF("FOB")]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[rowsFOB(0)("FOB").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
                   </Sequence>
                   <FlowStep.Next>
                     <FlowStep x:Name="__ReferenceID4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">200,554.84</av:Point>
-                          <av:Size x:Key="ShapeSize">200,52.4</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">300,607.24 300,627.24</av:PointCollection>
+                          <av:Point x:Key="ShapeLocation">200,604.84</av:Point>
+                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">300,656.84 300,677.24</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Copy Rename File workflow" sap:VirtualizedContainerService.HintSize="200,52.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\Process Subflows\Copy Rename File.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Copy Rename File workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\Process Subflows\Copy Rename File.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="IN_strCurrentFile">[in_TransactionItem]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="IN_strCPH">[dictJRF("CPH")]</InArgument>
@@ -262,21 +295,21 @@
                         <FlowStep x:Name="__ReferenceID5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">200,627.24</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52.4</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">300,679.64 300,709.64</av:PointCollection>
+                              <av:Point x:Key="ShapeLocation">200,677.24</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">300,729.24 299.8,729.24 299.8,749.64</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Upload JRF to Sharepoint workflow" sap:VirtualizedContainerService.HintSize="378.8,113.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\Upload JRF to Sharepoint.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Upload JRF to Sharepoint workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\Upload JRF to Sharepoint.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="IN_strSharepointURL">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rowsDisease(0)(&quot;SharepointSite&quot;).ToString" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rowsDisease(0)(&quot;FileStoreSharepointSite&quot;).ToString" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="IN_strSharepointLibrary">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rowsDisease(0)(&quot;SharepointLibrary&quot;).ToString" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rowsDisease(0)(&quot;FileStoreSharepointLibrary&quot;).ToString" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="IN_strUploadPath">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(rowsDisease(0)(&quot;JRFDirectory&quot;).ToString,dictJRF(&quot;InfectedAreasReference&quot;).Replace(&quot;/&quot;,&quot;-&quot;))" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(rowsDisease(0)(&quot;JRFSharepointDirectory&quot;).ToString,dictJRF(&quot;InfectedAreasReference&quot;).Replace(&quot;/&quot;,&quot;-&quot;))" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="IN_strCPH">
                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="dictJRF(&quot;CPH&quot;).Replace(&quot;/&quot;,&quot;-&quot;)" />
@@ -295,25 +328,25 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
                           <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID6" Condition="[dictJRF(&quot;VisitTypeCode&quot;)=&quot;TSE&quot;]" DisplayName="Telephone Stock Enquiry?" sap:VirtualizedContainerService.HintSize="141.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                            <FlowDecision x:Name="__ReferenceID6" Condition="[dictJRF(&quot;VisitTypeCode&quot;)=&quot;TSE&quot;]" DisplayName="Telephone Stock Enquiry?" sap:VirtualizedContainerService.HintSize="140.8,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <av:Point x:Key="ShapeLocation">229.4,709.64</av:Point>
-                                  <av:Size x:Key="ShapeSize">141.2,87.2</av:Size>
-                                  <av:PointCollection x:Key="TrueConnector">229.4,753.24 210,753.24 210,814.02</av:PointCollection>
-                                  <av:PointCollection x:Key="FalseConnector">370.6,753.24 420,753.24 420,936.4</av:PointCollection>
+                                  <av:Point x:Key="ShapeLocation">229.4,749.64</av:Point>
+                                  <av:Size x:Key="ShapeSize">140.8,87.2</av:Size>
+                                  <av:PointCollection x:Key="TrueConnector">229.4,793.24 210,793.24 210,854.02</av:PointCollection>
+                                  <av:PointCollection x:Key="FalseConnector">370.2,793.24 420,793.24 420,976.4</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
                                 <FlowStep x:Name="__ReferenceID7">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">110,814.02</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,52.4</av:Size>
+                                      <av:Point x:Key="ShapeLocation">110,854.02</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Update Call Allocations workflow" sap:VirtualizedContainerService.HintSize="200,52.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\Process Subflows\Update Call Allocations.xaml">
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Update Call Allocations workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\Process Subflows\Update Call Allocations.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:String" x:Key="IN_strSharepointURL" />
                                       <InArgument x:TypeArguments="x:String" x:Key="IN_strAllocationsFileName" />
@@ -335,27 +368,24 @@
                                 </FlowStep>
                               </FlowDecision.True>
                               <FlowDecision.False>
-                                <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID0}" x:Name="__ReferenceID8" DisplayName="Disease" sap:VirtualizedContainerService.HintSize="70,87.2" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
-                                  <FlowSwitch.Expression>
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="dictJRF(&quot;Disease&quot;)" />
-                                  </FlowSwitch.Expression>
+                                <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID0}" x:Name="__ReferenceID8" DisplayName="Disease" Expression="[dictJRF(&quot;Disease&quot;)]" sap:VirtualizedContainerService.HintSize="70,87.2" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">385,936.4</av:Point>
+                                      <av:Point x:Key="ShapeLocation">385,976.4</av:Point>
                                       <av:Size x:Key="ShapeSize">70,87.2</av:Size>
-                                      <av:PointCollection x:Key="Default">420,1023.6 420,1073.6</av:PointCollection>
-                                      <av:PointCollection x:Key="BluetongueConnector">455,980 550,980 550,1099.8 520,1099.8</av:PointCollection>
-                                      <av:PointCollection x:Key="Avian InfluenzaConnector">385,980 355,980 355,980.44 235,980.44</av:PointCollection>
+                                      <av:PointCollection x:Key="Default">420,1063.6 420,1113.6</av:PointCollection>
+                                      <av:PointCollection x:Key="BluetongueConnector">455,1020 550,1020 550,1139.6 520,1139.6</av:PointCollection>
+                                      <av:PointCollection x:Key="Avian InfluenzaConnector">385,1020 355,1020 355,1020.02 245,1020.02</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <FlowStep x:Key="Bluetongue" x:Name="__ReferenceID0">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">320,1073.6</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,52.4</av:Size>
+                                        <av:Point x:Key="ShapeLocation">320,1113.6</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Disease not currently processed" sap:VirtualizedContainerService.HintSize="200,52.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Please note that the automated process currently ends here for JRFs associated with disease '&quot;+dictJRF(&quot;Disease&quot;)+&quot;'.&quot;]">
+                                    <ui:LogMessage DisplayName="Disease not currently processed" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Please note that the automated process currently ends here for JRFs associated with disease '&quot;+dictJRF(&quot;Disease&quot;)+&quot;'.&quot;]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -366,17 +396,34 @@
                                   <FlowStep x:Key="Avian Influenza" x:Name="__ReferenceID9">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">35,946.04</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,68.8</av:Size>
+                                        <av:Point x:Key="ShapeLocation">45,994.02</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="PLACEHOLDER" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Update Tracker List workflow" sap:VirtualizedContainerService.HintSize="373.2,112.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Process\Process Subflows\Update Tracker List.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:String" x:Key="IN_strSharepointURL">
+                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rowsDisease(0)(&quot;TrackerSharepointSite&quot;).ToString" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="IN_strSharepointList">
+                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rowsDisease(0)(&quot;TrackerSharepointList&quot;).ToString" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="IN_strJRFPath">
+                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTransactionCopy" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictJRF">
+                                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictJRF" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="sd1:DataTable" x:Key="IN_dtStockNumbers">
+                                          <mva:VisualBasicValue x:TypeArguments="sd1:DataTable" ExpressionText="dtStockTable" />
+                                        </InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
+                                    </ui:InvokeWorkflowFile>
                                   </FlowStep>
                                 </FlowSwitch>
                               </FlowDecision.False>
