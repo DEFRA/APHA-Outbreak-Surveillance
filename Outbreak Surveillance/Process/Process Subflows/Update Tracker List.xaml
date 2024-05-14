@@ -1,0 +1,316 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Update_Tracker_List" this:Update_Tracker_List.IN_strSharepointURL="https://defra.sharepoint.com/sites/Community290/" this:Update_Tracker_List.IN_strSharepointList="TEST APHA_VDP JRF TRACKER" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:Pop_Ups;assembly=Pop Ups" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:us="clr-namespace:UiPathTeam.SharePoint;assembly=UiPathTeam.SharePoint" xmlns:usa="clr-namespace:UiPathTeam.SharePoint.Activities;assembly=UiPathTeam.SharePoint.Activities" xmlns:usal="clr-namespace:UiPathTeam.SharePoint.Activities.Lists;assembly=UiPathTeam.SharePoint.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="IN_strSharepointURL" Type="InArgument(x:String)" />
+    <x:Property Name="IN_strSharepointList" Type="InArgument(x:String)" />
+    <x:Property Name="IN_strJRFPath" Type="InArgument(x:String)" />
+    <x:Property Name="IN_dictJRF" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="IN_dtStockNumbers" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="IN_boolPausePoint3" Type="InArgument(x:Boolean)" />
+    <x:Property Name="IO_swProcessingTimer" Type="InArgument(sd1:Stopwatch)" />
+  </x:Members>
+  <this:Update_Tracker_List.IN_strJRFPath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Update_Tracker_List.IN_strJRFPath>
+  <this:Update_Tracker_List.IN_dictJRF>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" />
+  </this:Update_Tracker_List.IN_dictJRF>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1410,2477.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Update_Tracker_List_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="74">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPathTeam.SharePoint</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Microsoft.SharePoint.Client</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPathTeam.SharePoint.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPathTeam.SharePoint.Activities.Lists</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Pop_Ups</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Globalization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
+      <AssemblyReference>Microsoft.SharePoint.Client.Runtime</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.SharePoint.Client</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Configuration.Install</AssemblyReference>
+      <AssemblyReference>Pop Ups</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Update_Tracker_List" sap:VirtualizedContainerService.HintSize="526,2412" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[new Dictionary(of String, Object)]" Name="dictProperties" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Unfortunately have to hardcode these.&#xA;&#xA;field_0 = Date Added to Tracker (date is assumed US format on upload so format to account for this)&#xA;field_1 = JRF Due Date&#xA;field_3 = Disease Reference Number&#xA;field_4 = FOB Number&#xA;field_5 = JRF Number&#xA;field_6 = CPH Number&#xA;field_7 = JRF Type&#xA;field_8 = Commercial/Non-Commercial&#xA;field_9 = Keeper Surname&#xA;field_10 = Address&#xA;field_11 = Postcode&#xA;field_12 = Phone Number&#xA;field_13 = Mobile Number&#xA;field_14 = Stock Numbers" DisplayName="Create upload dictionary" sap:VirtualizedContainerService.HintSize="484,796.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_0")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[Today.ToString("MM/dd/yyyy")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_1")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[Date.ParseExact(IN_dictJRF("DateVisitDue"),"dd/MM/yyyy",CultureInfo.CurrentCulture).ToString("MM/dd/yyyy")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_3")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("InfectedAreasReference")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_4")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("FOB")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_5")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("JobNumber")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_6")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("CPH")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_7")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("JRFType")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_8")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("CommercialNonCommercial")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_9")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[Split(IN_dictJRF("ContactName")," ").Last]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_10")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("Location")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_11")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("Postcode")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_12")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("ContactTel")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_13")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[IN_dictJRF("MobileTel")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_14")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[""]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[IN_dtStockNumbers]" DisplayName="For Each Stock" sap:VirtualizedContainerService.HintSize="484,175.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="stockRow" />
+          </ActivityAction.Argument>
+          <Assign DisplayName="Construct string for SPOL list" sap:VirtualizedContainerService.HintSize="262.4,59.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[dictProperties("field_14")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Object">[dictProperties("field_14").ToString+stockRow("Count").ToString+" "+stockRow("Stock Description").ToString+", "]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <Assign DisplayName="Remove trailing comma from stock numbers" sap:VirtualizedContainerService.HintSize="484,59.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Object">[dictProperties("field_14")]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Object">[Regex.Replace(dictProperties("field_14").ToString,"\, $","")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[IN_boolPausePoint3]" DisplayName="Pause Point 3?" sap:VirtualizedContainerService.HintSize="484,654.8" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Pause Point 3" sap:VirtualizedContainerService.HintSize="280,464.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="strTrackerProperties" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <InvokeMethod DisplayName="Stop Timer - PP3" sap:VirtualizedContainerService.HintSize="238,135.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Stop">
+            <InvokeMethod.TargetObject>
+              <InArgument x:TypeArguments="sd1:Stopwatch">[IO_swProcessingTimer]</InArgument>
+            </InvokeMethod.TargetObject>
+          </InvokeMethod>
+          <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Pause Point 3" sap:VirtualizedContainerService.HintSize="238,22" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Updating Avian Influenza Tracker&lt;/h1&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;The following values will be added to the Avian Influenza Tracker:&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Date Added to Tracker:&lt;/strong&gt;&amp;ensp;&quot;+Date.ParseExact(dictProperties(&quot;field_0&quot;).ToString,&quot;MM/dd/yyyy&quot;,CultureInfo.CurrentCulture).ToString(&quot;dd/MM/yyyy&quot;)+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;JRF Due Date:&lt;/strong&gt;&amp;ensp;&quot;+Date.ParseExact(dictProperties(&quot;field_1&quot;).ToString,&quot;MM/dd/yyyy&quot;,CultureInfo.CurrentCulture).ToString(&quot;dd/MM/yyyy&quot;)+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Disease Reference Number:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_3&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;FOB Number:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_4&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;JRF Number:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_5&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;CPH Number:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_6&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;JRF Type:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_7&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Commercial/Non-Commercial:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_8&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Keeper Surname:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_9&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Address:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_10&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Postcode:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_11&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Phone Number:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_12&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Mobile Number:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_13&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Stock Numbers:&lt;/strong&gt;&amp;ensp;&quot;+dictProperties(&quot;field_14&quot;).ToString+&#xD;&#xA;&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;&lt;strong&gt;Attachment to upload:&lt;/strong&gt;&lt;br&gt;&quot;+&#xD;&#xA;IN_strJRFPath+&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;If these values appear to be correct, please click 'Continue'.&lt;br&gt;&quot;+&#xD;&#xA;&quot;If you do not wish to proceed with the upload of these values to the tracker,, please click 'Stop'&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 3" IN_WidthHeight="[{600,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+          <InvokeMethod DisplayName="Start Timer - PP3" sap:VirtualizedContainerService.HintSize="238,135.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
+            <InvokeMethod.TargetObject>
+              <InArgument x:TypeArguments="sd1:Stopwatch">[IO_swProcessingTimer]</InArgument>
+            </InvokeMethod.TargetObject>
+          </InvokeMethod>
+        </Sequence>
+      </If.Then>
+    </If>
+    <usa:SharepointApplicationScope AzureApplicationID="{x:Null}" ClientContext="{x:Null}" ClientId="{x:Null}" ClientSecret="{x:Null}" LoginTimeout="{x:Null}" Password="{x:Null}" SecurePassword="{x:Null}" UserName="{x:Null}" AzureAppPermissions="None" DisplayName="Sharepoint application scope - tracker list" sap:VirtualizedContainerService.HintSize="484,473.2" sap2010:WorkflowViewState.IdRef="SharepointApplicationScope_1" PlatformType="Online" QueryGrouping="False" ResetCredentials="False" SharePointInstanceType="WebLogin" URL="[IN_strSharepointURL]">
+      <usa:SharepointApplicationScope.Body>
+        <ActivityAction x:TypeArguments="us:SharePointContextInfo">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="us:SharePointContextInfo" Name="SharePointContextInfoTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Update tracker and add attachments" sap:VirtualizedContainerService.HintSize="360.8,331.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="intItemID" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <usal:AddListItem AttachmentsAction="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" AddedItemID="[intItemID]" ChooseFile="False" DisplayName="Add list item - JRF info" sap:VirtualizedContainerService.HintSize="318.8,103.2" sap2010:WorkflowViewState.IdRef="AddListItem_1" ListName="[IN_strSharepointList]" PropertiesToAdd="[dictProperties]" ShowAttachFiles="False" ShowCAMLQuery="False" ShowCAMLWarning="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="True" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="True" ShowRelativeUrl="False" ShowRename="False" ShowUserName="False" />
+            <usal:AddListItemAttachments AttachmentsCollection="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" AttachmentsAction="AttachFiles" ChooseFile="False" DisplayName="Attach JRF to list item" sap:VirtualizedContainerService.HintSize="318.8,96" sap2010:WorkflowViewState.IdRef="AddListItemAttachments_1" ListItemID="[intItemID]" ListName="[IN_strSharepointList]" ShowAttachFiles="True" ShowCAMLQuery="False" ShowCAMLWarning="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="True" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="False" ShowRelativeUrl="False" ShowRename="False" ShowUserName="False">
+              <usal:AddListItemAttachments.Attachments>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                  <InArgument x:TypeArguments="x:String">[IN_strJRFPath]</InArgument>
+                </scg:List>
+              </usal:AddListItemAttachments.Attachments>
+            </usal:AddListItemAttachments>
+          </Sequence>
+        </ActivityAction>
+      </usa:SharepointApplicationScope.Body>
+    </usa:SharepointApplicationScope>
+  </Sequence>
+</Activity>
