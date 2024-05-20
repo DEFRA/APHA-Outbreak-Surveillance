@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1410,4502.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410,4610</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Scrape_JRF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="72">
@@ -103,7 +103,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the current JRF word document, extracts relevant information using Regex and outputs the collection of values as a dictionary.&#xA;&#xA;If any values are returned as an empty string due to a failed Regex match, these keys are listed and reported in a Business Exception." DisplayName="Scrape_JRF" sap:VirtualizedContainerService.HintSize="967.2,4437.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the current JRF word document, extracts relevant information using Regex and outputs the collection of values as a dictionary.&#xA;&#xA;If any values are returned as an empty string due to a failed Regex match, these keys are listed and reported in a Business Exception." DisplayName="Scrape_JRF" sap:VirtualizedContainerService.HintSize="967.2,4544.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strJRF" />
       <Variable x:TypeArguments="x:Boolean" Name="boolValidPostcode" />
@@ -120,6 +120,13 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:ReportStatus DisplayName="Report Status - scraping JRF" sap:VirtualizedContainerService.HintSize="925.2,67.2" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[&quot;Extracting JRF data&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReportStatus>
     <Assign sap2010:Annotation.AnnotationText="Fields that must be provided, otherwise Business Exception. Other fields can be empty.&#xA;&#xA;Assigning at top rather than setting default value for easy visibility/access for developer." DisplayName="Mandatory fields" sap:VirtualizedContainerService.HintSize="925.2,190" sap2010:WorkflowViewState.IdRef="Assign_22">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[listMandatory]</OutArgument>
@@ -434,7 +441,7 @@
                                         <av:Point x:Key="ShapeLocation">363,1196.4</av:Point>
                                         <av:Size x:Key="ShapeSize">74.4,87.2</av:Size>
                                         <av:PointCollection x:Key="TrueConnector">363,1240 331.8,1240 331.8,1290.2</av:PointCollection>
-                                        <av:PointCollection x:Key="FalseConnector">437.4,1240 467.4,1240 467.4,1239.8 527.4,1239.8</av:PointCollection>
+                                        <av:PointCollection x:Key="FalseConnector">437.4,1240 467.4,1240 467.4,1239.8 537.4,1239.8</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <FlowDecision.True>
@@ -464,16 +471,18 @@
                                       <FlowStep x:Name="__ReferenceID17">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">527.4,1210</av:Point>
+                                            <av:Point x:Key="ShapeLocation">537.4,1210</av:Point>
                                             <av:Size x:Key="ShapeSize">262.4,59.6</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign DisplayName="Add unrecognised JRF type to exceptions message" sap:VirtualizedContainerService.HintSize="262.4,59.6" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                        <Assign DisplayName="Set JRFType as empty" sap:VirtualizedContainerService.HintSize="262.4,59.6" sap2010:WorkflowViewState.IdRef="Assign_27">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[strExceptions]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("JRFType")]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">["JRF Type could not be determined as PZ or SZ not found. Combined Infected Areas Partial Zone: "+OUT_dictJRF("CombinedInfectedAreasPartialZone")]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <Literal x:TypeArguments="x:String" Value="" />
+                                            </InArgument>
                                           </Assign.Value>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">

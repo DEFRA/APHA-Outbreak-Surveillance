@@ -156,7 +156,7 @@
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
       <ui:ReadCsvFile DataTable="[dtFOB]" Delimitator="Comma" DisplayName="FOB lookup" FilePath="C:\Users\m1012882\OneDrive - Defra\UiPath\Outbreak Surveillance\APHA-Outbreak-Surveillance\Data\FOB.csv" sap:VirtualizedContainerService.HintSize="434,156.4" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
-      <ui:ReadCsvFile DataTable="[dtDiseaseReference]" Delimitator="Comma" DisplayName="Disease Reference" FilePath="C:\Users\m1012882\OneDrive - Defra\UiPath\Outbreak Surveillance\APHA-Outbreak-Surveillance\Data\DiseaseReference.csv" sap:VirtualizedContainerService.HintSize="434,156.4" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
+      <ui:ReadCsvFile DataTable="[dtDiseaseReference]" Delimitator="Comma" DisplayName="Disease Reference" FilePath="C:\Users\m1012882\OneDrive - Defra\UiPath\Outbreak Surveillance\APHA-Outbreak-Surveillance\Data\Disease Reference Test\DiseaseReference.csv" sap:VirtualizedContainerService.HintSize="434,156.4" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
     </Sequence>
     <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="476,205.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
@@ -167,7 +167,7 @@
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process Transaction workflow" sap:VirtualizedContainerService.HintSize="334,113.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Transaction.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_TransactionItem">
-            <Literal x:TypeArguments="x:String">C:\Users\m1012882\OneDrive - Defra\UiPath\Outbreak Surveillance\APHA-Outbreak-Surveillance\Data\CI test.docx</Literal>
+            <Literal x:TypeArguments="x:String">C:\Users\m1012882\OneDrive - Defra\UiPath\Outbreak Surveillance\APHA-Outbreak-Surveillance\Data\ToProcess\Test 2.docx</Literal>
           </InArgument>
           <InOutArgument x:TypeArguments="s:Int32[]" x:Key="io_arrExitPoint" />
           <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_swProcessingTimer">
