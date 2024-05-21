@@ -55,6 +55,12 @@
         "testCaseId": "1aaeed92-4ecc-41b5-89ce-395d6ccc103b",
         "testCaseType": "TestCase",
         "fileName": "Process\\tc01 Process Transaction.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "4e73bbf3-5cab-42d8-b491-0f7400c7e998",
+        "testCaseType": "TestCase",
+        "fileName": "Process\\Process Subflows\\tc01 Scrape JRF.xaml"
       }
     ],
     "modernBehavior": false

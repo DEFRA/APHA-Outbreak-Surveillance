@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1410,4610</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410,4820</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Scrape_JRF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="72">
@@ -103,7 +103,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the current JRF word document, extracts relevant information using Regex and outputs the collection of values as a dictionary.&#xA;&#xA;If any values are returned as an empty string due to a failed Regex match, these keys are listed and reported in a Business Exception." DisplayName="Scrape_JRF" sap:VirtualizedContainerService.HintSize="967.2,4544.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the current JRF word document, extracts relevant information using Regex and outputs the collection of values as a dictionary.&#xA;&#xA;If any values are returned as an empty string due to a failed Regex match, these keys are listed and reported in a Business Exception." DisplayName="Scrape_JRF" sap:VirtualizedContainerService.HintSize="967.2,4754.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strJRF" />
       <Variable x:TypeArguments="x:Boolean" Name="boolValidPostcode" />
@@ -204,7 +204,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Extract location and postcode" sap:VirtualizedContainerService.HintSize="925.2,697.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Extract location and postcode" sap:VirtualizedContainerService.HintSize="925.2,907.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -260,6 +260,19 @@
           </Sequence>
         </If.Else>
       </If>
+      <Assign sap2010:Annotation.AnnotationText="Formatting sometimes means that Main Address section gets captured alongside location. This attempts to capture the location correctly by capturing the text up to and including the captured postcode." DisplayName="Recapture location to postcode" sap:VirtualizedContainerService.HintSize="484,170" sap2010:WorkflowViewState.IdRef="Assign_28">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("Location")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Regex.Match(OUT_dictJRF("Location"),"(?s).*?"+OUT_dictJRF("Postcode")).Value]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
     </Sequence>
     <Flowchart DisplayName="Extract and assign visit type" sap:VirtualizedContainerService.HintSize="925.2,1385.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <Flowchart.Variables>
