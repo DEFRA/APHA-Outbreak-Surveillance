@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7bRJ0L7F9CF698MKoAYkYOV+86yL1XOnQnVymooz42EPu5u5Uf5Q2dnJnrEHQ8HJE8yItKvaDx65ZvdXBsYVwA==",
+  "dgSpecHash": "kyWbaXE7iXOkqyG9Xlv6qFaIr+ve9+/bGlOixdS/Ymxd+U8nOc4OIBmC7P6sPJfSDu7sFJPjocQlb2Y+vSk54Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\m1012882\\OneDrive - Defra\\UiPath\\Outbreak Surveillance\\APHA-Outbreak-Surveillance\\Outbreak Surveillance\\.local\\",
   "expectedPackageFiles": [
@@ -25,7 +25,7 @@
     "C:\\Users\\m1012882\\.nuget\\packages\\google.apis.peopleservice.v1\\1.55.0.2567\\google.apis.peopleservice.v1.1.55.0.2567.nupkg.sha512",
     "C:\\Users\\m1012882\\.nuget\\packages\\htmlagilitypack\\1.11.38\\htmlagilitypack.1.11.38.nupkg.sha512",
     "C:\\Users\\m1012882\\.nuget\\packages\\idp\\1.0.17\\idp.1.0.17.nupkg.sha512",
-    "C:\\Users\\m1012882\\.nuget\\packages\\logging\\1.0.10\\logging.1.0.10.nupkg.sha512",
+    "C:\\Users\\m1012882\\.nuget\\packages\\logging\\1.0.16\\logging.1.0.16.nupkg.sha512",
     "C:\\Users\\m1012882\\.nuget\\packages\\mailkit\\3.1.1\\mailkit.3.1.1.nupkg.sha512",
     "C:\\Users\\m1012882\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0\\microsoft.aspnet.signalr.client.2.4.0.nupkg.sha512",
     "C:\\Users\\m1012882\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.3\\microsoft.aspnet.webapi.client.5.2.3.nupkg.sha512",
