@@ -157,6 +157,80 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": null,
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Extract Word Table.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrTable&Sequence_1",
+        "strJRF&Sequence_1",
+        "intRow&Sequence_1",
+        "strTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "IN_intNumberOfColumns",
+        "OUT_dtWordTable",
+        "IN_strTableText"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Upload JRF to Sharepoint.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrFolders&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "IN_strSharepointURL",
+        "IN_strUploadPath",
+        "IN_strCPH",
+        "IO_swProcessingTimer",
+        "IN_strFileToUpload",
+        "IN_strSharepointLibraryURLSegment",
+        "IN_strSharepointLibraryDisplayName"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Update Call Allocations.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrItems&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "IN_strSharepointURL",
+        "IN_strAllocationsFileName",
+        "IN_strSheetName",
+        "IN_strAllocationsLocalPath",
+        "IN_dtCallAllocationsData",
+        "IN_strAllocationsSharepointPath",
+        "IO_swProcessingTimer",
+        "IN_boolPausePoint2"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Update Tracker List.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dictProperties&Sequence_1",
+        "strTrackerProperties&Sequence_3",
+        "intItemID&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "IN_strSharepointURL",
+        "IN_strSharepointList",
+        "IN_strJRFPath",
+        "IN_dictJRF",
+        "IN_dtStockNumbers",
+        "IN_boolPausePoint3",
+        "IO_swProcessingTimer"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
     }
   ]
 }

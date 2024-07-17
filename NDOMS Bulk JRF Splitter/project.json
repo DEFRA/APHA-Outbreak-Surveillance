@@ -1,5 +1,6 @@
 {
   "name": "NDOMS Bulk JRF Splitter",
+  "projectId": "6affd262-5a84-4645-8af2-aa6a09af12dc",
   "description": "Split bulk JRFs produced by NDOMS into individual JRFs for further processing.",
   "main": "Main.xaml",
   "dependencies": {
@@ -23,6 +24,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -30,7 +32,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -43,7 +46,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
