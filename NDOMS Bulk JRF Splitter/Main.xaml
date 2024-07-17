@@ -1,0 +1,205 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="466,624.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:Pop_Ups;assembly=Pop Ups" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:w="clr-namespace:WordVBActivities;assembly=WordVBActivities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="58">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Form.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>Pop_Ups</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>WordVBActivities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>Microsoft.Office.Interop.Word</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.Office.Interop.Word</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>Pop Ups</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>WordVBActivities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="476,599.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strToProcess" />
+      <Variable x:TypeArguments="x:String" Name="strBulkJRFPath" />
+      <Variable x:TypeArguments="x:String" Name="strButtonSelected" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,507.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="526,1056.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="boolDismissed" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="ToProcess" DisplayName="Get &quot;To Process&quot; folder Asset" FolderPath="APHA Root/Outbreak Surveillance" sap:VirtualizedContainerService.HintSize="484,139.6" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[strToProcess]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[boolDismissed]" DisplayName="Select document form" FormHeight="450" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;{{data.PopupMessage}}&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;File/Folder Path&quot;,&quot;customClass&quot;:&quot;filePath&quot;,&quot;showAllFileTypes&quot;:true,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;bulkJRFPath&quot;,&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Please select document to split" FormWidth="600" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="484,142.4" sap2010:WorkflowViewState.IdRef="FormActivity_2" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strButtonSelected]" StartAsMinimized="False">
+            <ufa:FormActivity.Body>
+              <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+            </ufa:FormActivity.Body>
+            <ufa:FormActivity.DelayBody>
+              <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_2" />
+              </ActivityAction>
+            </ufa:FormActivity.DelayBody>
+            <ufa:FormActivity.FormFieldsCollection>
+              <InArgument x:TypeArguments="x:String" x:Key="PopupMessage">["&lt;h1&gt;Please select bulk JRF form&lt;/h1&gt;&lt;p&gt;Please select a bulk JRF document produced by NDOMS to split into individual JRFs.&lt;/p&gt;&lt;p&gt;The split documents will be created in the 'To Process' folder associated with the Outbreak Surveillance robot. This is currently set as:&lt;br&gt;"+strToProcess+"&lt;br&gt;To change this path, please contact DRACOE.&lt;/p&gt;"]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="bulkJRFPath">[strBulkJRFPath]</OutArgument>
+            </ufa:FormActivity.FormFieldsCollection>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ufa:FormActivity>
+          <If Condition="[boolDismissed or strButtonSelected=&quot;no&quot;]" DisplayName="If dismissed or stopped" sap:VirtualizedContainerService.HintSize="484,250.4" sap2010:WorkflowViewState.IdRef="If_4">
+            <If.Then>
+              <Throw DisplayName="Throw - dismissed or stopped" Exception="[new BusinessRuleException(&quot;The start form was dismissed or the stop button was pressed.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+          <If Condition="[not Path.GetExtension(strBulkJRFPath).tolower.contains(&quot;doc&quot;)]" DisplayName="If file is not doc or docx" sap:VirtualizedContainerService.HintSize="484,250.4" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Then>
+              <Throw DisplayName="Throw - not word document" Exception="[new BusinessRuleException(&quot;The selected file is not recognised as a word document. Please ensure that the file selected has extension '.doc' or '.docx'.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+          <w:SplitDocument sap:VirtualizedContainerService.HintSize="484,22" IN_boolRemoveParagraphSpacing="True" IN_boolShrinkFont="True" IN_intPagesPerSplit="2" IN_strInputFile="[strBulkJRFPath]" IN_strOutputFileName="[Path.GetFileNameWithoutExtension(strBulkJRFPath)]" IN_strOutputFolder="[if(strToProcess.EndsWith(&quot;\&quot;) or strToProcess.EndsWith(&quot;/&quot;), strToProcess, strToProcess+&quot;\&quot;)]" sap2010:WorkflowViewState.IdRef="SplitDocument_1" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,22.8" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <If Condition="[exception.Message&lt;&gt;&quot;The start form was dismissed or the stop button was pressed.&quot;]" DisplayName="If not form dismissed exception" sap:VirtualizedContainerService.HintSize="484,438" sap2010:WorkflowViewState.IdRef="If_6">
+              <If.Then>
+                <Sequence DisplayName="Log business exception and form" sap:VirtualizedContainerService.HintSize="376,247.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - business exception" sap:VirtualizedContainerService.HintSize="334,93.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal" Message="[exception.Message]" />
+                  <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Business exception form" sap:VirtualizedContainerService.HintSize="334,22" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Business Exception Encountered&lt;/h1&gt;&lt;P&gt;A Business Exception has occured during processing of '&quot;+exception.Source+&quot;'.&lt;BR&gt;&lt;BR&gt; Error Message: &quot;+exception.Message+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{850,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_3" />
+                </Sequence>
+              </If.Then>
+            </If>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,318" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Log system exception and form" sap:VirtualizedContainerService.HintSize="376,247.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message - system exception" sap:VirtualizedContainerService.HintSize="334,93.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Fatal" Message="[exception.Message]" />
+              <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="System exception form" sap:VirtualizedContainerService.HintSize="334,22" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;System Exception Encountered&lt;/h1&gt;&lt;P&gt;A System Exception has occured during processing.&lt;/P&gt;&lt;BR&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{600,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
