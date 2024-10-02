@@ -231,6 +231,27 @@
       ],
       "ConstantsSectionElementsOrder": null,
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Scrape JRF (old NDOMS).xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strJRF&Sequence_1",
+        "boolValidPostcode&Sequence_1",
+        "dictEmpties&Sequence_1",
+        "strExceptions&Sequence_1",
+        "strEmpties&Sequence_1",
+        "listMandatory&Sequence_1",
+        "strStockNumbers&Sequence_1",
+        "dtInfectedAreas&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "IN_strJRFPath",
+        "OUT_dictJRF",
+        "OUT_dtStockTable"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
     }
   ]
 }
