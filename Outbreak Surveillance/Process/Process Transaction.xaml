@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1104,1546.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410,1576.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_Transaction_2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -88,7 +88,6 @@
       <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " sap:VirtualizedContainerService.HintSize="654,1511.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -150,7 +149,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">80,396.04</av:Point>
                   <av:Size x:Key="ShapeSize">200,83.6</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">280,437.44 300,437.44 300,496.04</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">180,479.64 180,625.84 200,625.84</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="Pause Point 1" sap:VirtualizedContainerService.HintSize="200,83.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -163,13 +162,13 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each JRF value" sap:VirtualizedContainerService.HintSize="434,184.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[dictJRF]">
+                <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each JRF value" sap:VirtualizedContainerService.HintSize="469.6,207.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[dictJRF]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="item" />
                       </ActivityAction.Argument>
-                      <Assign DisplayName="Construct HTML of extracted fields" sap:VirtualizedContainerService.HintSize="262.4,59.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign DisplayName="Construct HTML of extracted fields" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strJRFHTML]</OutArgument>
                         </Assign.To>
@@ -180,7 +179,7 @@
                     </ActivityAction>
                   </ui:ForEach.Body>
                 </ui:ForEach>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Nicer layout than Output Datatable activity" DisplayName="Convert Stock Table to HTML" sap:VirtualizedContainerService.HintSize="434,144.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\Process Subflows\Convert Datatable to HTML.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Nicer layout than Output Datatable activity" DisplayName="Convert Stock Table to HTML" sap:VirtualizedContainerService.HintSize="469.6,145.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\Process Subflows\Convert Datatable to HTML.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtTable">[dtStockTable]</InArgument>
                     <OutArgument x:TypeArguments="x:String" x:Key="out_strHTMLTable">[strStockHTML]</OutArgument>
@@ -191,12 +190,12 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <InvokeMethod DisplayName="Stop timer - PP1" sap:VirtualizedContainerService.HintSize="434,135.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Stop">
+                <InvokeMethod DisplayName="Stop timer - PP1" sap:VirtualizedContainerService.HintSize="469.6,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Stop">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[io_swProcessingTimer]</InArgument>
                   </InvokeMethod.TargetObject>
                 </InvokeMethod>
-                <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Pause Point 1" sap:VirtualizedContainerService.HintSize="434,22" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Extracted JRF fields&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please review the fields extracted from the JRF and verify that they have been extracted correctly.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+strJRFHTML+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Stock Numbers&lt;/strong&gt;&lt;br&gt;&quot;+strStockHTML+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If these fields look correct, please press 'Continue'.&lt;br&gt;&quot;+&#xA;&quot;If any field looks incorrect, please press 'Stop'.&quot;]" IN_PopupTitle="Pause Point 1" IN_WidthHeight="[{500,800}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Pause Point 1" sap:VirtualizedContainerService.HintSize="469.6,24.8" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Extracted JRF fields&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please review the fields extracted from the JRF and verify that they have been extracted correctly.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+strJRFHTML+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Stock Numbers&lt;/strong&gt;&lt;br&gt;&quot;+strStockHTML+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If these fields look correct, please press 'Continue'.&lt;br&gt;&quot;+&#xA;&quot;If any field looks incorrect, please press 'Stop'.&quot;]" IN_PopupTitle="Pause Point 1" IN_WidthHeight="[{500,800}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
                 <InvokeMethod DisplayName="Start timer - PP1" sap:VirtualizedContainerService.HintSize="434,135.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[io_swProcessingTimer]</InArgument>
@@ -345,7 +344,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">120,1092.08 120,1108.08</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Call Allocations Data" sap:VirtualizedContainerService.HintSize="496,510.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <Sequence DisplayName="Call Allocations Data" sap:VirtualizedContainerService.HintSize="200,83.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -446,35 +445,37 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
                                   <FlowStep.Next>
-                                    <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID0}" x:Name="__ReferenceID7" DisplayName="Disease" Expression="[dictJRF(&quot;Disease&quot;)]" sap:VirtualizedContainerService.HintSize="70,87.2" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+                                    <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID7" DisplayName="Disease" Expression="[dictJRF(&quot;Disease&quot;)]" sap:VirtualizedContainerService.HintSize="70,87.2" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+                                      <FlowSwitch.Default>
+                                        <FlowStep x:Name="__ReferenceID8">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">320,1343.6</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,53.2</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Disease not currently processed" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Please note that the automated process currently ends here for JRFs associated with disease '&quot;+dictJRF(&quot;Disease&quot;)+&quot;'.&quot;]">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:LogMessage>
+                                        </FlowStep>
+                                      </FlowSwitch.Default>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">385,1206.4</av:Point>
                                           <av:Size x:Key="ShapeSize">70,87.2</av:Size>
                                           <av:PointCollection x:Key="Default">420,1293.6 420,1343.6</av:PointCollection>
-                                          <av:PointCollection x:Key="BluetongueConnector">455,1250 550,1250 550,1370.2 520,1370.2</av:PointCollection>
-                                          <av:PointCollection x:Key="Avian InfluenzaConnector">385,1250 355,1250 355,1250.62 245,1250.62</av:PointCollection>
+                                          <av:PointCollection x:Key="BluetongueConnector">385,1228.2 145,1228.2 145,1254.02</av:PointCollection>
+                                          <av:PointCollection x:Key="Avian InfluenzaConnector">385,1250 355,1250 355,1280.62 245,1280.62</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <FlowStep x:Key="Bluetongue" x:Name="__ReferenceID0">
+                                      <FlowStep x:Key="Avian Influenza" x:Name="__ReferenceID0">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">320,1343.6</av:Point>
-                                            <av:Size x:Key="ShapeSize">200,53.2</av:Size>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Disease not currently processed" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Please note that the automated process currently ends here for JRFs associated with disease '&quot;+dictJRF(&quot;Disease&quot;)+&quot;'.&quot;]">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </ui:LogMessage>
-                                      </FlowStep>
-                                      <FlowStep x:Key="Avian Influenza" x:Name="__ReferenceID8">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">45,1224.02</av:Point>
+                                            <av:Point x:Key="ShapeLocation">45,1254.02</av:Point>
                                             <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -495,6 +496,7 @@
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:InvokeWorkflowFile>
                                       </FlowStep>
+                                      <x:Reference>__ReferenceID0<x:Key>Bluetongue</x:Key></x:Reference>
                                     </FlowSwitch>
                                   </FlowStep.Next>
                                 </FlowStep>
@@ -522,8 +524,8 @@
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID7</x:Reference>
-    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID10</x:Reference>
     <FlowDecision x:Name="__ReferenceID14" Condition="[Path.GetExtension(in_TransactionItem).ToLower=&quot;.docx&quot;]" DisplayName="Transaction item is .docx?" sap:VirtualizedContainerService.HintSize="140.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3" True="{x:Reference __ReferenceID11}">

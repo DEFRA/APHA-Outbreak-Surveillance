@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410,1090.4" sap2010:WorkflowViewState.IdRef="Main2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:l="clr-namespace:Logging;assembly=Logging" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:Pop_Ups;assembly=Pop Ups" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1104,1090.4" sap2010:WorkflowViewState.IdRef="Main2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:l="clr-namespace:Logging;assembly=Logging" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:Pop_Ups;assembly=Pop Ups" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="76">
       <x:String>System.Activities</x:String>
@@ -520,24 +520,24 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Confirm that the user has finished processing all cases and has no more to add to the queue." DisplayName="End Process Confirmation" sap:VirtualizedContainerService.HintSize="202,139.2" sap2010:WorkflowViewState.IdRef="State_6">
                       <State.Entry>
-                        <Sequence sap:VirtualizedContainerService.HintSize="786.4,698" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                        <Sequence sap:VirtualizedContainerService.HintSize="1074,762.8" sap2010:WorkflowViewState.IdRef="Sequence_64">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[CType(Config(&quot;AdditionalTransactionsPrompt&quot;), Boolean) AND boolSkipEndConfirmation = False]" DisplayName="Present More Transactions Prompt?" sap:VirtualizedContainerService.HintSize="744.4,606" sap2010:WorkflowViewState.IdRef="If_23">
+                          <If Condition="[CType(Config(&quot;AdditionalTransactionsPrompt&quot;), Boolean) AND boolSkipEndConfirmation = False]" DisplayName="Present More Transactions Prompt?" sap:VirtualizedContainerService.HintSize="1012,651.6" sap2010:WorkflowViewState.IdRef="If_23">
                             <If.Then>
-                              <TryCatch DisplayName="Present Breakout Form" sap:VirtualizedContainerService.HintSize="437.6,446" sap2010:WorkflowViewState.IdRef="TryCatch_18">
+                              <TryCatch DisplayName="Present Breakout Form" sap:VirtualizedContainerService.HintSize="533.6,490.8" sap2010:WorkflowViewState.IdRef="TryCatch_18">
                                 <TryCatch.Try>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="304.4,213.6" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="496,257.6" sap2010:WorkflowViewState.IdRef="Sequence_63">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="End Process Confirmation Form" sap:VirtualizedContainerService.HintSize="262.4,22" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\EndConfirmationForm.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Process more cases?&lt;/h1&gt;&lt;P&gt;The Robot has completed all available cases.&lt;/P&gt;&lt;P&gt;If you would like to process more, please add them to the queue and Continue.&lt;/P&gt;&lt;BR&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,300}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_6" />
-                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,59.6" sap2010:WorkflowViewState.IdRef="Assign_64">
+                                    <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="End Process Confirmation Form" sap:VirtualizedContainerService.HintSize="434,24.8" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\EndConfirmationForm.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Process more cases?&lt;/h1&gt;&lt;P&gt;The Robot has completed all available cases.&lt;/P&gt;&lt;P&gt;If you would like to process more, please add them to the queue and Continue.&lt;/P&gt;&lt;BR&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,300}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_6" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_64">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Boolean">[boolContinue]</OutArgument>
                                       </Assign.To>
@@ -548,7 +548,7 @@
                                   </Sequence>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.6,22.8" sap2010:WorkflowViewState.IdRef="Catch`1_21">
+                                  <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="499.6,22.8" sap2010:WorkflowViewState.IdRef="Catch`1_21">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -573,7 +573,7 @@
                               </TryCatch>
                             </If.Then>
                             <If.Else>
-                              <Assign sap:VirtualizedContainerService.HintSize="262.4,59.6" sap2010:WorkflowViewState.IdRef="Assign_66">
+                              <Assign sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_66">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[boolContinue]</OutArgument>
                                 </Assign.To>
@@ -939,7 +939,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Transition.To>
-                                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="1083.2,1770.4" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,124" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                                       <State.Entry>
                                         <Sequence DisplayName="End Process" sap:VirtualizedContainerService.HintSize="1037.6,1624.4" sap2010:WorkflowViewState.IdRef="Sequence_50">
                                           <sap:WorkflowViewStateService.ViewState>
@@ -1190,7 +1190,7 @@
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
-    <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Present user with pop-up to confirm robotic process start. Also allow user to confirm breakout, or batch transaction processing." DisplayName="Request Run Type" sap:VirtualizedContainerService.HintSize="256,139.2" sap2010:WorkflowViewState.IdRef="State_5">
+    <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Present user with pop-up to confirm robotic process start. Also allow user to confirm breakout, or batch transaction processing." DisplayName="Request Run Type" sap:VirtualizedContainerService.HintSize="641.2,1040.4" sap2010:WorkflowViewState.IdRef="State_5">
       <State.Entry>
         <Sequence sap:VirtualizedContainerService.HintSize="595.6,602.8" sap2010:WorkflowViewState.IdRef="Sequence_53">
           <sap:WorkflowViewStateService.ViewState>
@@ -1206,7 +1206,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <p:Generic_PopUp OUT_strButtonSelected="{x:Null}" DisplayName="Start Form" sap:VirtualizedContainerService.HintSize="434,24.8" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\StartForm.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Start the Robot?&lt;/h1&gt;&quot;+&#xA;&quot;&lt;P&gt;Please ensure all your work is saved and all applications are closed before continuing.&lt;/P&gt;&quot;+&#xA;&quot;&lt;P&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This robot is only suitable for processing JRF forms saved in &lt;strong&gt;.docx format&lt;/strong&gt;. Please ensure that any files you wish to process have the &lt;strong&gt;.docx&lt;/strong&gt; extension.&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{675,475}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_5" OUT_ProcessType="[strProcessType]" />
+                <p:Generic_PopUp OUT_strButtonSelected="{x:Null}" DisplayName="Start Form" sap:VirtualizedContainerService.HintSize="434,24.8" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\StartForm.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Start the Robot?&lt;/h1&gt;&quot;+&#xA;&quot;&lt;P&gt;Please ensure all your work is saved and all applications are closed before continuing.&lt;/P&gt;&quot;+&#xA;&quot;&lt;P&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This robot is only suitable for processing JRF forms saved in &lt;strong&gt;.docx format&lt;/strong&gt;. Please ensure that any files you wish to process have the &lt;strong&gt;.docx&lt;/strong&gt; extension.&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{675,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_5" OUT_ProcessType="[strProcessType]" />
                 <Assign sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_55">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[boolRunProcess]</OutArgument>
