@@ -93,7 +93,7 @@
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Scrape JRF workflow" sap:VirtualizedContainerService.HintSize="388,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Scrape JRF.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="IN_strJRFPath">
-            <Literal x:TypeArguments="x:String">C:\Users\rm000121\OneDrive - Defra\UiPath\Outbreak Surveillance\APHA-Outbreak-Surveillance\Data\ToProcess\right one 3 rivers district bulk raise0.docx</Literal>
+            <Literal x:TypeArguments="x:String">C:\Users\rm000121\OneDrive - Defra\UiPath\Outbreak Surveillance\APHA-Outbreak-Surveillance\Data\Completed\right one 3 rivers district bulk raise0.docx</Literal>
           </InArgument>
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="OUT_dictJRF">
             <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictJRF" />
@@ -101,7 +101,7 @@
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_dtStockTable" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="388,63.2" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[dictJRF(&quot;Location&quot;)]" />
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="388,63.2" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[dictJRF(&quot;Email&quot;).ToString]" />
     </Sequence>
     <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="450,104.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>

@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1410,5947.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410,6562.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Scrape_JRF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="72">
@@ -108,7 +108,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the current JRF word document, extracts relevant information using Regex and outputs the collection of values as a dictionary.&#xA;&#xA;If any values are returned as an empty string due to a failed Regex match, these keys are listed and reported in a Business Exception." DisplayName="Scrape_JRF" sap:VirtualizedContainerService.HintSize="1044.8,5886.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the current JRF word document, extracts relevant information using Regex and outputs the collection of values as a dictionary.&#xA;&#xA;If any values are returned as an empty string due to a failed Regex match, these keys are listed and reported in a Business Exception." DisplayName="Scrape_JRF" sap:VirtualizedContainerService.HintSize="1044.8,6672" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strJRF" />
       <Variable x:TypeArguments="x:Boolean" Name="boolValidPostcode" />
@@ -125,14 +125,14 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReportStatus DisplayName="Report Status - scraping JRF" sap:VirtualizedContainerService.HintSize="982.8,67.6" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[&quot;Extracting JRF data&quot;]">
+    <ui:ReportStatus DisplayName="Report Status - scraping JRF" sap:VirtualizedContainerService.HintSize="982.8,68" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[&quot;Extracting JRF data&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReportStatus>
-    <Assign sap2010:Annotation.AnnotationText="Fields that must be provided, otherwise Business Exception. Other fields can be empty.&#xA;&#xA;Assigning at top rather than setting default value for easy visibility/access for developer." DisplayName="Mandatory fields" sap:VirtualizedContainerService.HintSize="982.8,175.2" sap2010:WorkflowViewState.IdRef="Assign_22">
+    <Assign sap2010:Annotation.AnnotationText="Fields that must be provided, otherwise Business Exception. Other fields can be empty.&#xA;&#xA;Assigning at top rather than setting default value for easy visibility/access for developer." DisplayName="Mandatory fields" sap:VirtualizedContainerService.HintSize="982.8,177.6" sap2010:WorkflowViewState.IdRef="Assign_22">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[listMandatory]</OutArgument>
       </Assign.To>
@@ -159,7 +159,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:DocumentReadText>
-    <Assign DisplayName="Initialise dictionary" sap:VirtualizedContainerService.HintSize="982.8,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign DisplayName="Initialise dictionary" sap:VirtualizedContainerService.HintSize="982.8,82.4" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[OUT_dictJRF]</OutArgument>
       </Assign.To>
@@ -167,14 +167,14 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(of String, String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Extract and try parse date" sap:VirtualizedContainerService.HintSize="982.8,506" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Extract and try parse date" sap:VirtualizedContainerService.HintSize="982.8,508" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Extract Date Visit Due" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign DisplayName="Extract Date Visit Due" sap:VirtualizedContainerService.HintSize="484,82.4" sap2010:WorkflowViewState.IdRef="Assign_7">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("DateVisitDue")]</OutArgument>
         </Assign.To>
@@ -182,14 +182,14 @@
           <InArgument x:TypeArguments="x:String">[Regex.Match(strJRF,"(?s)(?&lt;=Date Visit Due\:).*?(?=Date Visit Planned\:)").Value.Trim]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[not DateTime.TryParseExact(OUT_dictJRF(&quot;DateVisitDue&quot;), &quot;dd/MM/yyyy&quot;, CultureInfo.CurrentCulture, DateTimeStyles.None, nothing)]" DisplayName="If invalid date" sap:VirtualizedContainerService.HintSize="484,272.8" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[not DateTime.TryParseExact(OUT_dictJRF(&quot;DateVisitDue&quot;), &quot;dd/MM/yyyy&quot;, CultureInfo.CurrentCulture, DateTimeStyles.None, nothing)]" DisplayName="If invalid date" sap:VirtualizedContainerService.HintSize="484,274.4" sap2010:WorkflowViewState.IdRef="If_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Assign DisplayName="Add invalid date to exception message" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign DisplayName="Add invalid date to exception message" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strExceptions]</OutArgument>
             </Assign.To>
@@ -209,14 +209,14 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Extract location and postcode" sap:VirtualizedContainerService.HintSize="982.8,1748.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Extract location and postcode" sap:VirtualizedContainerService.HintSize="982.8,1760" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Location" sap:VirtualizedContainerService.HintSize="912.4,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign DisplayName="Location" sap:VirtualizedContainerService.HintSize="912.4,82.4" sap2010:WorkflowViewState.IdRef="Assign_9">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("Location")]</OutArgument>
         </Assign.To>
@@ -224,7 +224,7 @@
           <InArgument x:TypeArguments="x:String">[Regex.Match(strJRF,"(?s)(?&lt;=Location\:).*?(?=Contact Name\:)").Value.Trim]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Postcode from location" sap:VirtualizedContainerService.HintSize="912.4,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign DisplayName="Postcode from location" sap:VirtualizedContainerService.HintSize="912.4,82.4" sap2010:WorkflowViewState.IdRef="Assign_10">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("Postcode")]</OutArgument>
         </Assign.To>
@@ -237,7 +237,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <TryCatch DisplayName="Try Catch - validate and transform postcode" sap:VirtualizedContainerService.HintSize="912.4,987.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch - validate and transform postcode" sap:VirtualizedContainerService.HintSize="912.4,993.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -245,7 +245,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <iv:Validate_and_Transform sap2010:Annotation.AnnotationText="Regex has been used to extract the postcode in the first place - this step validates the extraction and applies consistent formatting" DisplayName="Validate and Transform Postcode" sap:VirtualizedContainerService.HintSize="200,116.8" IO_Postcode="[OUT_dictJRF(&quot;Postcode&quot;)]" sap2010:WorkflowViewState.IdRef="Validate_and_Transform_2" OUT_ValidPostcode="[boolValidPostcode]">
+          <iv:Validate_and_Transform sap2010:Annotation.AnnotationText="Regex has been used to extract the postcode in the first place - this step validates the extraction and applies consistent formatting" DisplayName="Validate and Transform Postcode" sap:VirtualizedContainerService.HintSize="200,118.8" IO_Postcode="[OUT_dictJRF(&quot;Postcode&quot;)]" sap2010:WorkflowViewState.IdRef="Validate_and_Transform_2" OUT_ValidPostcode="[boolValidPostcode]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -254,7 +254,7 @@
           </iv:Validate_and_Transform>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="746.4,557.6" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="746.4,560" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -265,28 +265,28 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <If Condition="[exception.Message.Contains(&quot;String cannot be of zero length.&quot;)]" DisplayName="If length 0 exception" sap:VirtualizedContainerService.HintSize="740.4,487.6" sap2010:WorkflowViewState.IdRef="If_7">
+              <If Condition="[exception.Message.Contains(&quot;String cannot be of zero length.&quot;)]" DisplayName="If length 0 exception" sap:VirtualizedContainerService.HintSize="740.4,489.6" sap2010:WorkflowViewState.IdRef="If_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Log length 0" sap:VirtualizedContainerService.HintSize="496,326.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="Log length 0" sap:VirtualizedContainerService.HintSize="496,328" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message - missing postcode" sap:VirtualizedContainerService.HintSize="434,93.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Postcode missing from JRF&quot;]">
+                    <ui:LogMessage DisplayName="Log Message - missing postcode" sap:VirtualizedContainerService.HintSize="434,94.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Postcode missing from JRF&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <Assign DisplayName="Set postcode as invalid" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_30">
+                    <Assign DisplayName="Set postcode as invalid" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_30">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Boolean">[boolValidPostcode]</OutArgument>
                       </Assign.To>
@@ -309,14 +309,14 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[not boolValidPostcode]" DisplayName="If postcode invalid" sap:VirtualizedContainerService.HintSize="912.4,366.4" sap2010:WorkflowViewState.IdRef="If_5">
+      <If Condition="[not boolValidPostcode]" DisplayName="If postcode invalid" sap:VirtualizedContainerService.HintSize="912.4,370.8" sap2010:WorkflowViewState.IdRef="If_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Assign DisplayName="Add invalid postcode to exception message" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_11">
+          <Assign DisplayName="Add invalid postcode to exception message" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_11">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strExceptions]</OutArgument>
             </Assign.To>
@@ -326,7 +326,7 @@
           </Assign>
         </If.Then>
         <If.Else>
-          <Assign sap2010:Annotation.AnnotationText="Formatting sometimes means that Main Address section gets captured alongside location. This attempts to capture the location correctly by capturing the text up to and including the captured postcode.&#xA;&#xA;Contained in the Else block as we don't want the previously captured location to be overwritten as blank due to a lack of postcode as this would falsely report the location as missing in the exception message." DisplayName="Recapture location to postcode" sap:VirtualizedContainerService.HintSize="434,205.6" sap2010:WorkflowViewState.IdRef="Assign_28">
+          <Assign sap2010:Annotation.AnnotationText="Formatting sometimes means that Main Address section gets captured alongside location. This attempts to capture the location correctly by capturing the text up to and including the captured postcode.&#xA;&#xA;Contained in the Else block as we don't want the previously captured location to be overwritten as blank due to a lack of postcode as this would falsely report the location as missing in the exception message." DisplayName="Recapture location to postcode" sap:VirtualizedContainerService.HintSize="434,209.2" sap2010:WorkflowViewState.IdRef="Assign_28">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("Location")]</OutArgument>
             </Assign.To>
@@ -342,7 +342,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:MultipleAssign DisplayName="Extract other values" sap:VirtualizedContainerService.HintSize="431.2,319.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Extract other values" sap:VirtualizedContainerService.HintSize="982.8,350.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
           <ui:AssignOperation sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="AssignOperation_18">
@@ -409,6 +409,14 @@
               <InArgument x:TypeArguments="x:String">[Regex.Match(strJRF,"(?s)(?&lt;=Infected Areas.*?)(AIV|BTD)\/?202[0-9]\/[0-9]{2,3}").Value]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_26">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("Email")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[Regex.Match(strJRF,"(?s)(?&lt;=Email\:).*?(?=Additional Map References)").Value.Trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
@@ -440,11 +448,11 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">260,97.7</av:Point>
-            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+            <av:Size x:Key="ShapeSize">200,53.2</av:Size>
             <av:PointCollection x:Key="ConnectorLocation">360,150.5 360,170.9</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Extract Visit Type" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign DisplayName="Extract Visit Type" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_12">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("VisitType")]</OutArgument>
           </Assign.To>
@@ -462,11 +470,11 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">260,170.9</av:Point>
-                <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">360,223.7 359.8,223.7 359.8,244.1</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Initialise visit type code" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_18">
+            <Assign DisplayName="Initialise visit type code" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_18">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("VisitTypeCode")]</OutArgument>
               </Assign.To>
@@ -482,12 +490,12 @@
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
             <FlowStep.Next>
-              <FlowDecision x:Name="__ReferenceID1" Condition="[OUT_dictJRF(&quot;VisitType&quot;).ToLower.Contains(&quot;telephone enquiry&quot;)]" DisplayName="Telephone Stock Enquiry?" sap:VirtualizedContainerService.HintSize="140.8,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+              <FlowDecision x:Name="__ReferenceID1" Condition="[OUT_dictJRF(&quot;VisitType&quot;).ToLower.Contains(&quot;telephone enquiry&quot;)]" DisplayName="Telephone Stock Enquiry?" sap:VirtualizedContainerService.HintSize="141.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <av:Point x:Key="ShapeLocation">289.4,244.1</av:Point>
-                    <av:Size x:Key="ShapeSize">140.8,87.2</av:Size>
+                    <av:Size x:Key="ShapeSize">141.2,87.2</av:Size>
                     <av:PointCollection x:Key="TrueConnector">289.4,287.7 198.8,287.7 198.8,370.4</av:PointCollection>
                     <av:PointCollection x:Key="FalseConnector">430.2,287.7 498.895,287.7 498.895,370</av:PointCollection>
                   </scg:Dictionary>
@@ -497,11 +505,11 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">98.8,370.4</av:Point>
-                        <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                        <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">198.8,423.2 198.8,1079.6</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Telephone Stock Enquiry" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_15">
+                    <Assign DisplayName="Telephone Stock Enquiry" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_15">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("VisitTypeCode")]</OutArgument>
                       </Assign.To>
@@ -519,16 +527,16 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">98.8,1079.6</av:Point>
-                            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                            <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                             <av:PointCollection x:Key="ConnectorLocation">198.8,1132.4 198.8,1182.8</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Combined Infected Areas and Partial Zone" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_17">
+                        <Assign DisplayName="Combined Infected Areas and Partial Zone" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_17">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("CombinedInfectedAreasPartialZone")]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[Regex.Match(strJRF,"(?s)(?&lt;=Disease Reference\: \[).*?(?=\])").Value.Trim]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[Regex.Match(strJRF,"(?s)(?&lt;=\*\*).*?(?=\*\*)").Value.Trim]</InArgument>
                           </Assign.Value>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -541,11 +549,11 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">80,1182.8</av:Point>
-                                <av:Size x:Key="ShapeSize">237.6,136.4</av:Size>
+                                <av:Size x:Key="ShapeSize">238,136.8</av:Size>
                                 <av:PointCollection x:Key="ConnectorLocation">317.6,1251 390,1251 390,1286.4</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <InvokeMethod DisplayName="Add CombinedInfectedAreasPartialZone as mandatory field" sap:VirtualizedContainerService.HintSize="237.6,136.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
+                            <InvokeMethod DisplayName="Add CombinedInfectedAreasPartialZone as mandatory field" sap:VirtualizedContainerService.HintSize="238,136.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
                               <InvokeMethod.TargetObject>
                                 <InArgument x:TypeArguments="scg:List(x:String)">[listMandatory]</InArgument>
                               </InvokeMethod.TargetObject>
@@ -572,10 +580,10 @@
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">90.79,1350</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                        <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="JRF Type - Stock Enquiry SZ" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                    <Assign DisplayName="JRF Type - Stock Enquiry SZ" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_24">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("JRFType")]</OutArgument>
                                       </Assign.To>
@@ -606,10 +614,10 @@
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">280.6,1470.2</av:Point>
-                                            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                            <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign DisplayName="JRF Type - Stock Enquiry PZ" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                        <Assign DisplayName="JRF Type - Stock Enquiry PZ" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_25">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("JRFType")]</OutArgument>
                                           </Assign.To>
@@ -629,10 +637,10 @@
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">577.4,1393.4</av:Point>
-                                            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                            <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign DisplayName="Set JRFType as empty" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                        <Assign DisplayName="Set JRFType as empty" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_27">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("JRFType")]</OutArgument>
                                           </Assign.To>
@@ -664,11 +672,11 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">398.895,370</av:Point>
-                        <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                        <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">498.895,422.8 498.895,443.2</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Initialise commercial/non-commmercial" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_29">
+                    <Assign DisplayName="Initialise commercial/non-commmercial" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_29">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("CommercialNonCommercial")]</OutArgument>
                       </Assign.To>
@@ -699,11 +707,11 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">230,551.1</av:Point>
-                                <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                 <av:PointCollection x:Key="ConnectorLocation">330,603.9 330,633.9 330.095,633.9 330.095,650</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Clinical Inspection" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_13">
+                            <Assign DisplayName="Clinical Inspection" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_13">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("VisitTypeCode")]</OutArgument>
                               </Assign.To>
@@ -721,11 +729,11 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">230.095,650</av:Point>
-                                    <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                    <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                     <av:PointCollection x:Key="ConnectorLocation">330.095,702.8 330.095,729.6</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="JRF Type - Visit Requested" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                <Assign DisplayName="JRF Type - Visit Requested" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_23">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("JRFType")]</OutArgument>
                                   </Assign.To>
@@ -743,11 +751,11 @@
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">230.095,729.6</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                        <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                         <av:PointCollection x:Key="ConnectorLocation">330.095,782.4 326.895,782.4 326.895,812.4</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Commercial/Non-Commercial" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                    <Assign DisplayName="Commercial/Non-Commercial" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_20">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("CommercialNonCommercial")]</OutArgument>
                                       </Assign.To>
@@ -761,7 +769,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </Assign>
                                     <FlowStep.Next>
-                                      <FlowDecision x:Name="__ReferenceID19" Condition="[OUT_dictJRF(&quot;Disease&quot;).ToString.ToLower.Trim=&quot;bluetongue&quot;]" DisplayName="Bluetongue?" sap:VirtualizedContainerService.HintSize="72.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                                      <FlowDecision x:Name="__ReferenceID19" Condition="[OUT_dictJRF(&quot;Disease&quot;).ToString.ToLower.Trim=&quot;bluetongue&quot;]" DisplayName="Bluetongue?" sap:VirtualizedContainerService.HintSize="72.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_7" True="{x:Reference __ReferenceID0}">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -769,6 +777,7 @@
                                             <av:Point x:Key="ShapeLocation">290.695,812.4</av:Point>
                                             <av:Size x:Key="ShapeSize">72.4,87.2</av:Size>
                                             <av:PointCollection x:Key="FalseConnector">363.095,856 399.895,856 399.895,922.8</av:PointCollection>
+                                            <av:PointCollection x:Key="TrueConnector">290.695,856 198.8,856 198.8,1079.6</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <FlowDecision.False>
@@ -776,10 +785,10 @@
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <av:Point x:Key="ShapeLocation">281.095,922.8</av:Point>
-                                                <av:Size x:Key="ShapeSize">237.6,136.4</av:Size>
+                                                <av:Size x:Key="ShapeSize">238,136.8</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <InvokeMethod DisplayName="Add CommercialNonCommercial to mandatory fields" sap:VirtualizedContainerService.HintSize="237.6,136.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
+                                            <InvokeMethod DisplayName="Add CommercialNonCommercial to mandatory fields" sap:VirtualizedContainerService.HintSize="238,136.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
                                               <InvokeMethod.TargetObject>
                                                 <InArgument x:TypeArguments="scg:List(x:String)">[listMandatory]</InArgument>
                                               </InvokeMethod.TargetObject>
@@ -816,11 +825,11 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">578.8,680.2</av:Point>
-                                    <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                    <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                     <av:PointCollection x:Key="ConnectorLocation">578.8,706.6 548.8,706.6 548.8,1106 298.8,1106</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Stock Enquiry" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                <Assign DisplayName="Stock Enquiry" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_14">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("VisitTypeCode")]</OutArgument>
                                   </Assign.To>
@@ -843,10 +852,10 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">748.895,750</av:Point>
-                                    <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                    <av:Size x:Key="ShapeSize">200,53.2</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Add unrecognised visit type to exception message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                <Assign DisplayName="Add unrecognised visit type to exception message" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_19">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[strExceptions]</OutArgument>
                                   </Assign.To>
@@ -893,20 +902,53 @@
       <x:Reference>__ReferenceID18</x:Reference>
       <x:Reference>__ReferenceID19</x:Reference>
     </Flowchart>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each mandatory value" sap:VirtualizedContainerService.HintSize="982.8,398.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[listMandatory]">
+    <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The &quot;Disease Reference&quot; as it is added in the Sharepoint list pertains to different fields in the JRF depending on the disease (even though the JRFs contain the same info regardless of disease).&#xD;&#xA;&#xD;&#xA;Avian Influenza (AIV) = InfectedAreasReference&#xD;&#xA;Bluetongue (BTD) = CombinedInfectedAreasPartialZone&#xD;&#xA;&#xD;&#xA;Switch allows for flexibility in adding new diseases." DisplayName="Set Disease Reference" Expression="[OUT_dictJRF(&quot;Disease&quot;).ToString.ToLower.Trim]" sap:VirtualizedContainerService.HintSize="982.8,693.2" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Switch.Default>
+        <Assign DisplayName="Default to InfectedAreasReference" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_33">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("DiseaseReference")]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[OUT_dictJRF("InfectedAreasReference")]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </Switch.Default>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign x:Key="bluetongue" DisplayName="BTD disease reference is CombinedInfectedAreasPartialZone" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_31">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("DiseaseReference")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[OUT_dictJRF("CombinedInfectedAreasPartialZone")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="avian influenza" DisplayName="AIV disease reference is InfectedAreasReference" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_32">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[OUT_dictJRF("DiseaseReference")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[OUT_dictJRF("InfectedAreasReference")]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Switch>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each mandatory value" sap:VirtualizedContainerService.HintSize="982.8,400.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[listMandatory]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <If Condition="[OUT_dictJRF(item)=&quot;&quot;]" DisplayName="If value of dictionary key is empty" sap:VirtualizedContainerService.HintSize="484,272.8" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[OUT_dictJRF(item)=&quot;&quot;]" DisplayName="If value of dictionary key is empty" sap:VirtualizedContainerService.HintSize="484,274.4" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Assign DisplayName="Append to string for exception message" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign DisplayName="Append to string for exception message" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strEmpties]</OutArgument>
                 </Assign.To>
@@ -933,7 +975,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <If Condition="[strExceptions&lt;&gt;&quot;&quot; or strEmpties&lt;&gt;&quot;&quot;]" DisplayName="If any exceptions or empty values" sap:VirtualizedContainerService.HintSize="982.8,250.8" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[strExceptions&lt;&gt;&quot;&quot; or strEmpties&lt;&gt;&quot;&quot;]" DisplayName="If any exceptions or empty values" sap:VirtualizedContainerService.HintSize="982.8,252" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -952,7 +994,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Extract Stock Table" sap:VirtualizedContainerService.HintSize="982.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Extract Word Table.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Extract Stock Table" sap:VirtualizedContainerService.HintSize="982.8,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Extract Word Table.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Int32" x:Key="IN_intNumberOfColumns">3</InArgument>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_dtWordTable">[OUT_dtStockTable]</OutArgument>
